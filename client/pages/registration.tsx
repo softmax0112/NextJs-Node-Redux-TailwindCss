@@ -54,7 +54,7 @@ const Hello = () => {
 
   return (
     <div className="grid justify-center" style={{ fontFamily: "Gilroy" }}>
-      <form className="bg-[#2E4F70] w-[770px] rounded-[20px] z-40">
+      <form className="bg-[#2E4F70] w-[770px] rounded-[20px] my-20 z-40">
         <div className="text-white text-[30px] font-bold px-6 py-2 rounded-full">Registration</div>
         <div className="bg-white text-[18px] px-6 py-8 grid justify-items-center">
           <div>
