@@ -4,11 +4,11 @@ import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:5000';
 
 export default function Login() {
-  const [ username, setUsername ] = useState('');
+  const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  const handleUsername = (e: any) => {
-    setUsername(e.target.value)
+  const handleEmail = (e: any) => {
+    setEmail(e.target.value)
   }
 
   const handlePassword = (e: any) => {
@@ -16,8 +16,14 @@ export default function Login() {
   }
 
   const handleLogin = () => {
-    axios.post('/login', { username, password })
-      .then(res => alert("login successful"))
+    axios.post('/login', { email, password })
+      .then(res => console.log(res))
+      .then(err => console.log(err));
+  }
+
+  const handleSignUp = () => {
+    axios.post('/signup', { email, password })
+      .then(res => console.log(res))
       .then(err => console.log(err));
   }
 
@@ -26,10 +32,10 @@ export default function Login() {
       <div className="w-full max-w-xs">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-              Username
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              Email
             </label>
-            <input value={username} onChange={handleUsername} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+            <input value={email} onChange={handleEmail} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
@@ -42,10 +48,13 @@ export default function Login() {
             <button onClick={handleLogin} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
               Sign In
             </button>
-            <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-              Forgot Password?
-            </a>
+            <button onClick={handleSignUp} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+              Sign Up
+            </button>
           </div>
+          <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+            Forgot Password?
+          </a>
         </form>
         <p className="text-center text-gray-500 text-xs">
           &copy;2020 Acme Corp. All rights reserved.
