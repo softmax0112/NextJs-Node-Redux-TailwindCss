@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, incrementByAmount } from '../features/counterSlice';
-import { RootState } from '../store';
+import { increment, decrement, incrementByAmount } from '../../features/counterSlice';
+import { RootState } from '../../store';
 
 export default function RTK() {
   const dispatch = useDispatch();

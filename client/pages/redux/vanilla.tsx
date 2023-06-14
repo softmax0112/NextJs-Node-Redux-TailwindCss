@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-
 import { createStore } from 'redux';
 
 const counterReducer = (state: any = { counter: 0 }, action: any) => {
@@ -14,7 +12,7 @@ const counterReducer = (state: any = { counter: 0 }, action: any) => {
 
 const store = createStore(counterReducer);
 
-export default function Redux() {
+export default function VanillaRedux() {
   const [ value, setValue ] = useState(0);
 
   store.subscribe(() => {
