@@ -16,13 +16,13 @@ export default function Login() {
   }
 
   const handleLogin = () => {
-    axios.post('/login', { email, password })
+    axios.post('/api/login', { email, password })
       .then(res => console.log(res))
       .then(err => console.log(err));
   }
 
   const handleSignUp = () => {
-    axios.post('/signup', { email, password })
+    axios.post('/api/signup', { email, password })
       .then(res => console.log(res))
       .then(err => console.log(err));
   }

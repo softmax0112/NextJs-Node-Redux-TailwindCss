@@ -39,7 +39,7 @@ const Hello = () => {
   }
 
   const handlerRegister = () => {
-    axios.get('http://localhost:5000/')
+    axios.get('http://localhost:5000/api')
       .then(res => {
         setName(res.data.name);
         setAddress(res.data.address);
